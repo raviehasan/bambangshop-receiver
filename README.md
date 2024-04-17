@@ -86,4 +86,14 @@ This is the place for you to write reflections:
 
 #### Reflection Subscriber-1
 
+1. Hal ini karena Mutex hanya mengizinkan satu thread untuk dapat mengakses (baik read or write) suatu data. Dengan demikian, apabila ada suatu thread yang sedang berinteraksi dengan data, maka thread lain tidak dapat berinteraksi dengan data tersebut (baik sekadar read maupun write). Sedangkan dengan RwLock dapat diakses dengan multiple-thread secara simultan. Berhubung pada kasus ini multiple-thread perlu mengakses, maka perlu menggunakan RwLock (Mutex tidak bisa support hal ini).
+
+2. Hal ini karena rust bersifat thread-safe, sehingga terdapat beberapa fitur tambahan yang dapat digunakan untuk memastikan bahwa concurrency berjalan dengan lancar. Note that cara menghandle concurrency rust dan Java berbeda, sehingga memang wajar apabila terdapat perbedaan demikian. Apabila rust mengizinkan hal tersebut, dapat berdampak pada concurrencynya, seperti race conditions, dan lain sebagainya karena shared data. Dengan rust tidak mengizinkan kita melakukan hal tersebut, risiko terkena permasalahan yang mungkin timbul dari concurrency semakin kecil.
+
 #### Reflection Subscriber-2
+
+1. 
+
+2. 
+
+3. 

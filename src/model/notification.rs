@@ -4,7 +4,7 @@ use rocket::serde::{Deserialize, Serialize};
 
 #[derive(Debug, Clone, Deserialize, Serialize)]
 #[serde(crate = "rocket::serde")]
-pub struct Notfication {
+pub struct Notification {
     pub product_title: String,
     pub product_url: String,
     pub product_type: String,
@@ -12,7 +12,7 @@ pub struct Notfication {
     pub status: String
 }
 
-impl Display for Notfication {
+impl Display for Notification {
     fn fmt(&self, f: &mut Formatter<'_>) -> Result {
         if self.status.to_uppercase().eq("CREATED") {
             return write!(f,

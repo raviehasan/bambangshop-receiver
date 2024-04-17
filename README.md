@@ -92,8 +92,8 @@ This is the place for you to write reflections:
 
 #### Reflection Subscriber-2
 
-1. 
+1. Saya sudah sempat explore lib.rs. Setahu saya, lib.rs digunakan untuk mendefinisikan modul yang akan digunakan pada project/aplikasi. Seperti misal terdapat "use lazy_static::lazy_static;" karena kita menggunakan external library  lazy_static untuk mark Vec dan DashMap sebagai static. "use rocket::http::Status;" yang nantinya digunakan untuk merepresentasikan respon HTTP, dan masih banyak lagi.
 
-2. 
+2. Tentunya iya. Salah satu tujuan dari observer pattern memang demikian. Dengan terdapat separation of concern pada observer dan subscriber pada kasus ini, modifikasi pada bagian subscriber akan lebih mudah dilakukan. Karena tidak akan ada ripple effect terhadap observernya. Dengan demikian, jelas bahwa observer pattern memudahkan kita untuk plug in more subscribers karena independent terhadap observer itu sendiri (maintainable). Hal yang sama berlaku ketika kita spawn lebih dari 1 main app. Hal ini karena setiap main app mempunyai observer. Dengan demikian, tidak ada shared information. Maka dari itu, tidak akan menghambat proses plug in more subscribers.
 
-3. 
+3. Sejauh ini, saya belum membuat test atau enchance documentationpada Postman collection saya. Tetapi sepertinya hal ini dapat membantu untuk assure bahwa aplikasi berjalan sesuai ekspektasi kita. Karena fungsi Postman sendiri adalah untuk berinteraksi dengan aplikasi dengan mengirimkan request (bisa disertai token, request body, dll). Maka dari itu, sepertinya akan membantu proses interaksi tersebut untuk menguji respon aplikasi untuk request tertentu yang diberikan (sekaligus memastikan apakah responnya sesuai expected).
